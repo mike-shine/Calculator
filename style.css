@@ -4,20 +4,58 @@
 }
 
 h1 {
-  font-size: 96px;
+  font-size: 72px;
+  text-align: center;
+}
+
+.largeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.displayContainer {
+  order: 1;
+  display: flex;
 }
 
 .display {
-  background-color: white;
+  background-color: honeydew;
   border: 2px groove chartreuse;
   height: 75px;
-  width: stretch;
+  width: 600px;
   font-size: 64px;
   line-height: 75px;
 }
 
+.rowOne {
+  order: 1;
+}
+
+.rowTwo {
+  order: 2;
+}
+
+.rowThree {
+  order: 3;
+}
+
+.rowFour {
+  order: 4;
+}
+
+.rowFive {
+  order: 5;
+}
+
 button {
-  background-color: wheat;
+  background-color: blanchedalmond;
+}
+
+.buttonContainer {
+  order: 2;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .numberButton {
@@ -39,7 +77,7 @@ button {
 }
 
 .equalsButton {
-  width: 600px;
+  width: 150px;
   height: 150px;
   font-size: 96px;
 }
