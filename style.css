@@ -2,6 +2,10 @@
   font-family: 'Roboto Mono', monospace;
 }
 
+h1 {
+  font-size: 96px;
+}
+
 .numberButton {
   width: 150px;
   height: 150px;
