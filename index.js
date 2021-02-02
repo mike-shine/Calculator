@@ -1,4 +1,4 @@
-let operations = require('./operations');
+import operations from './operations.js';
 
 /* Large section/structural components */
 
