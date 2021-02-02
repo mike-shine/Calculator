@@ -22,7 +22,7 @@ const number7Button = document.createElement('button');
 number7Button.textContent = '7';
 number7Button.classList.add('numberButton');
 number7Button.addEventListener('click', () => {
-  assign(7)
+  assign('7')
   console.log('operand1: ', operand1)
   console.log('operand2: ', operand2)
 })
@@ -33,7 +33,7 @@ const number8Button = document.createElement('button');
 number8Button.textContent = '8';
 number8Button.classList.add('numberButton');
 number8Button.addEventListener('click', () => {
-  assign(8)
+  assign('8')
   console.log('operand1: ', operand1)
   console.log('operand2: ', operand2)
 })
@@ -44,7 +44,7 @@ const number9Button = document.createElement('button');
 number9Button.textContent = '9';
 number9Button.classList.add('numberButton');
 number9Button.addEventListener('click', () => {
-  assign(9)
+  assign('9')
   console.log('operand1: ', operand1)
   console.log('operand2: ', operand2)
 })
@@ -56,7 +56,7 @@ const number4Button = document.createElement('button');
 number4Button.textContent = '4';
 number4Button.classList.add('numberButton');
 number4Button.addEventListener('click', () => {
-  assign(4)
+  assign('4')
   console.log('operand1: ', operand1)
   console.log('operand2: ', operand2)
 })
@@ -67,7 +67,7 @@ const number5Button = document.createElement('button');
 number5Button.textContent = '5';
 number5Button.classList.add('numberButton');
 number5Button.addEventListener('click', () => {
-  assign(5)
+  assign('5')
   console.log('operand1: ', operand1)
   console.log('operand2: ', operand2)
 })
@@ -78,7 +78,7 @@ const number6Button = document.createElement('button');
 number6Button.textContent = '6';
 number6Button.classList.add('numberButton');
 number6Button.addEventListener('click', () => {
-  assign(6)
+  assign('6')
   console.log('operand1: ', operand1)
   console.log('operand2: ', operand2)
 })
@@ -90,7 +90,7 @@ const number1Button = document.createElement('button');
 number1Button.textContent = '1';
 number1Button.classList.add('numberButton');
 number1Button.addEventListener('click', () => {
-  assign(1)
+  assign('1')
   console.log('operand1: ', operand1)
   console.log('operand2: ', operand2)
 })
@@ -101,7 +101,7 @@ const number2Button = document.createElement('button');
 number2Button.textContent = '2';
 number2Button.classList.add('numberButton');
 number2Button.addEventListener('click', () => {
-  assign(2)
+  assign('2')
   console.log('operand1: ', operand1)
   console.log('operand2: ', operand2)
 })
@@ -112,7 +112,7 @@ const number3Button = document.createElement('button');
 number3Button.textContent = '3';
 number3Button.classList.add('numberButton');
 number3Button.addEventListener('click', () => {
-  assign(3)
+  assign('3')
   console.log('operand1: ', operand1)
   console.log('operand2: ', operand2)
 })
@@ -125,21 +125,37 @@ buttonContainer.appendChild(number3Button);
 const plusButton = document.createElement('button');
 plusButton.textContent = '+';
 plusButton.classList.add('operationButton');
+plusButton.addEventListener('click', () => {
+  operate('plus');
+  console.log('operator: ', operator);
+});
 buttonContainer.appendChild(plusButton);
 
 const minusButton = document.createElement('button');
 minusButton.textContent = '-';
 minusButton.classList.add('operationButton');
+minusButton.addEventListener('click', () => {
+  operate('minus');
+  console.log('operator: ', operator);
+});
 buttonContainer.appendChild(minusButton);
 
 const multiplyButton = document.createElement('button');
 multiplyButton.textContent = 'x';
 multiplyButton.classList.add('operationButton');
+multiplyButton.addEventListener('click', () => {
+  operate('multiply');
+  console.log('operator: ', operator);
+});
 buttonContainer.appendChild(multiplyButton);
 
 const divideButton = document.createElement('button');
 divideButton.textContent = '÷';
 divideButton.classList.add('operationButton');
+divideButton.addEventListener('click', () => {
+  operate('divide');
+  console.log('operator: ', operator);
+});
 buttonContainer.appendChild(divideButton);
 
 const equalsButton = document.createElement('button');
@@ -151,23 +167,24 @@ buttonContainer.appendChild(equalsButton);
 
 let operand1 = null;
 let operand2 = null;
-let operation = null;
+let operator = null;
 
-function assign(input) {
+function assign(inputString) {
   if (!operand1) {
-    operand1 = input;
+    operand1 = inputString;
   } else if (operand1 && !operand2) {
-    operand2 = input;
+    operand2 = inputString;
+  }
+}
+
+function operate(inputString) {
+  if (!operator) {
+    operator = inputString;
   }
 }
 
 /* Notes
 
-Create number 1, number 2, and operation variable
-
-when a number is clicked, it is stored in number 1 var
-
-same with operation and number 2
 
 as soon as number 2 is initialized, the next non-numerical key that is pressed will trigger the operation to occur (answer will possibly be assigned to number 1 and displayed?)
 
