@@ -126,7 +126,7 @@ const plusButton = document.createElement('button');
 plusButton.textContent = '+';
 plusButton.classList.add('operationButton');
 plusButton.addEventListener('click', () => {
-  operate('plus');
+  operate(add);
   console.log('operator: ', operator);
 });
 buttonContainer.appendChild(plusButton);
@@ -135,7 +135,7 @@ const minusButton = document.createElement('button');
 minusButton.textContent = '-';
 minusButton.classList.add('operationButton');
 minusButton.addEventListener('click', () => {
-  operate('minus');
+  operate(subtract);
   console.log('operator: ', operator);
 });
 buttonContainer.appendChild(minusButton);
@@ -144,7 +144,7 @@ const multiplyButton = document.createElement('button');
 multiplyButton.textContent = 'x';
 multiplyButton.classList.add('operationButton');
 multiplyButton.addEventListener('click', () => {
-  operate('multiply');
+  operate(multiply);
   console.log('operator: ', operator);
 });
 buttonContainer.appendChild(multiplyButton);
@@ -153,14 +153,26 @@ const divideButton = document.createElement('button');
 divideButton.textContent = '÷';
 divideButton.classList.add('operationButton');
 divideButton.addEventListener('click', () => {
-  operate('divide');
+  operate(divide);
   console.log('operator: ', operator);
 });
 buttonContainer.appendChild(divideButton);
 
+const clearButton = document.createElement('button');
+clearButton.textContent = 'C';
+clearButton.classList.add('clearButton');
+clearButton.addEventListener('click', () => {
+  clear();
+});
+buttonContainer.appendChild(clearButton);
+
 const equalsButton = document.createElement('button');
 equalsButton.textContent = '=';
 equalsButton.classList.add('equalsButton');
+equalsButton.addEventListener('click', () => {
+  evaluate(operand1, operand2, operator);
+  console.log()
+})
 buttonContainer.appendChild(equalsButton);
 
 /* Calculator functionality */
@@ -168,6 +180,7 @@ buttonContainer.appendChild(equalsButton);
 let operand1 = null;
 let operand2 = null;
 let operator = null;
+let solution = null;
 
 function assign(inputString) {
   if (!operand1) {
@@ -177,10 +190,28 @@ function assign(inputString) {
   }
 }
 
-function operate(inputString) {
+function operate(inputFunc) {
   if (!operator) {
-    operator = inputString;
+    operator = inputFunc;
   }
+}
+
+function evaluate(input1, input2, mathOperation) {
+  input1 = Number(input1);
+  input2 = Number(input2);
+  solution = mathOperation(input1, input2);
+  console.log('solution: ', solution);
+}
+
+function clear() {
+  operand1 = null;
+  operand2 = null;
+  operator = null;
+  solution = null;
+  console.log('operand1: ', operand1);
+  console.log('operand2: ', operand2);
+  console.log('operator: ', operator);
+  console.log('solution: ', solution);
 }
 
 /* Notes

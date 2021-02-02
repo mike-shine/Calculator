@@ -18,6 +18,12 @@ h1 {
   font-size: 64px;
 }
 
+.clearButton {
+  width: 150px;
+  height: 150px;
+  font-size: 64px;
+}
+
 .equalsButton {
   width: 600px;
   height: 150px;
