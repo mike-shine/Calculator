@@ -1,5 +1,6 @@
 * {
   font-family: 'Roboto Mono', monospace;
+  background-color: aliceblue;
 }
 
 h1 {
@@ -7,11 +8,16 @@ h1 {
 }
 
 .display {
+  background-color: white;
   border: 2px groove chartreuse;
   height: 75px;
   width: stretch;
   font-size: 64px;
   line-height: 75px;
+}
+
+button {
+  background-color: wheat;
 }
 
 .numberButton {
