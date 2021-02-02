@@ -1,3 +1,13 @@
 * {
   font-family: 'Roboto Mono', monospace;
 }
+
+button {
+  width: 150px;
+  height: 150px;
+  font-size: 64px;
+}
+
+button:hover {
+  background-color: cornflowerblue;
+}
