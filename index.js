@@ -1,3 +1,5 @@
+let operations = require('./operations');
+
 /* Large section/structural components */
 
 const body = document.querySelector('body');
