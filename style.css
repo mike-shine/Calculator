@@ -6,6 +6,12 @@ h1 {
   font-size: 96px;
 }
 
+.display {
+  border: 2px dotted blue;
+  height: 100px;
+  width: stretch;
+}
+
 .numberButton {
   width: 150px;
   height: 150px;

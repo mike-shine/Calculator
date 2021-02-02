@@ -214,8 +214,16 @@ function clear() {
   console.log('solution: ', solution);
 }
 
+/* Display functionality */
+
+const display = document.createElement('div');
+display.classList.add('display');
+displayContainer.appendChild(display);
+displayContainer.appendChild(lineBreak);
+
 /* Notes
 
+Display's textContent is a string, which is concatenated and adjusted along with mathematical operations?
 
 as soon as number 2 is initialized, the next non-numerical key that is pressed will trigger the operation to occur (answer will possibly be assigned to number 1 and displayed?)
 
