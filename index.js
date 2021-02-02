@@ -162,7 +162,7 @@ buttonContainer.appendChild(number0Button);
 
 
 
-/* Operations buttons appended to DOM */
+/* Non-numerical buttons appended to DOM */
 
 const plusButton = document.createElement('button');
 plusButton.textContent = '+';
@@ -228,6 +228,19 @@ equalsButton.addEventListener('click', () => {
 })
 buttonContainer.appendChild(equalsButton);
 
+const decimalButton = document.createElement('button');
+decimalButton.textContent = '.';
+decimalButton.classList.add('operationButton');
+decimalButton.classList.add('rowFive');
+decimalButton.addEventListener('click', () => {
+  addDecimalPoint(operand2);
+  display.textContent = displayString;
+  console.log('operand1: ', operand1)
+  console.log('operand2: ', operand2)
+  console.log('displayString: ', displayString);
+})
+buttonContainer.appendChild(decimalButton);
+
 
 
 
@@ -281,12 +294,20 @@ function clear() {
   console.log('solution: ', solution);
 }
 
-
-
-
-
-
-
+function addDecimalPoint(input) {
+  if(operand2) {
+    if (operand2.indexOf('.') === -1) {
+      operand2 += '.';
+      displayString += '.';
+    }
+  } else {
+    if (operand1.indexOf('.') === -1) {
+      operand1 += '.';
+      displayString += '.';
+    }
+  }
+  display.textContent = displayString;
+}
 
 /* Display functionality */
 
@@ -310,6 +331,10 @@ displayContainer.appendChild(lineBreak);
 
 /* Notes
 
+
+what the heck is happening with decimal subtraction...?
+
+
 flexbox tasks:
 
  - center display and buttons (indiv. containers, or largeContainer?)
@@ -321,9 +346,12 @@ flexbox tasks:
  - adjust width of display as needed
  - center it all and resize when done
 
-as soon as number 2 is initialized, the next non-numerical key that is pressed will trigger the operation to occur (answer will possibly be assigned to number 1 and displayed?)
 
-decimal point button - only works if a checker variable is false (user cannot press it more than once)
+ features to be added:
+
+ - Create functionality that allows users to chain operations
+ - +/- button to change sign
+ - Backspace button to allow the user to undo a mistake without clearing everything
 
 
 */
