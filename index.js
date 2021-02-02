@@ -242,14 +242,14 @@ let operator = null;
 let solution = null;
 
 function assign(inputString) {
-  if (!operand1) {
-    operand1 = inputString;
-    displayString += operand1;
+  if (!operator) {
+    Boolean(operand1) ? operand1 += inputString : operand1 = inputString;
+    displayString = operand1;
     console.log('displayString: ', displayString)
-  } else if (operand1 && !operand2) {
-    operand2 = inputString;
+  } else if (operand1 && operator) {
+    Boolean(operand2) ? operand2 += inputString : operand2 = inputString;
     displayString = '';
-    displayString += operand2;
+    displayString = operand2;
     console.log('displayString: ', displayString)
   }
 }
