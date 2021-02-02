@@ -74,3 +74,28 @@ buttonContainer.appendChild(number3Button);
 
 
 /* Operations buttons appended to DOM */
+
+const plusButton = document.createElement('button');
+plusButton.textContent = '+';
+plusButton.classList.add('operationButton')
+buttonContainer.appendChild(plusButton);
+
+const minusButton = document.createElement('button');
+minusButton.textContent = '-';
+minusButton.classList.add('operationButton')
+buttonContainer.appendChild(minusButton);
+
+const multiplyButton = document.createElement('button');
+multiplyButton.textContent = 'x';
+multiplyButton.classList.add('operationButton')
+buttonContainer.appendChild(multiplyButton);
+
+const divideButton = document.createElement('button');
+divideButton.textContent = '÷';
+divideButton.classList.add('operationButton')
+buttonContainer.appendChild(divideButton);
+
+const equalsButton = document.createElement('button');
+equalsButton.textContent = '=';
+equalsButton.classList.add('equalsButton')
+buttonContainer.appendChild(equalsButton);

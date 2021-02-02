@@ -2,12 +2,32 @@
   font-family: 'Roboto Mono', monospace;
 }
 
-button {
+.numberButton {
   width: 150px;
   height: 150px;
   font-size: 64px;
 }
 
-button:hover {
+.operationButton {
+  width: 150px;
+  height: 150px;
+  font-size: 64px;
+}
+
+.equalsButton {
+  width: 600px;
+  height: 150px;
+  font-size: 96px;
+}
+
+.numberButton:hover {
   background-color: cornflowerblue;
+}
+
+.operationButton:hover {
+  background-color: orange;
+}
+
+.equalsButton:hover {
+  background-color: mediumaquamarine;
 }
