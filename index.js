@@ -189,6 +189,8 @@ equalsButton.addEventListener('click', () => {
 })
 buttonContainer.appendChild(equalsButton);
 
+
+
 /* Calculator functionality */
 
 let operand1 = null;
@@ -199,11 +201,11 @@ let solution = null;
 function assign(inputString) {
   if (!operand1) {
     operand1 = inputString;
-    displayString += operand1 + ' ';
+    displayString += operand1;
     console.log('displayString: ', displayString)
   } else if (operand1 && !operand2) {
     operand2 = inputString;
-    displayString += operand2 + ' ';
+    displayString += operand2;
     console.log('displayString: ', displayString)
   }
 }
@@ -213,16 +215,16 @@ function operate(inputFunc) {
     operator = inputFunc;
   }
   if (inputFunc.name === 'add') {
-    displayString += '+ ';
+    displayString += ' + ';
     console.log('displayString: ', displayString)
   } else if (inputFunc.name === 'subtract') {
-    displayString += '- ';
+    displayString += ' - ';
     console.log('displayString: ', displayString)
   } else if (inputFunc.name === 'multiply') {
-    displayString += 'x ';
+    displayString += ' x ';
     console.log('displayString: ', displayString)
   } else if (inputFunc.name === 'divide') {
-    displayString += '÷ ';
+    displayString += ' ÷ ';
     console.log('displayString: ', displayString)
   }
 
@@ -249,6 +251,9 @@ function clear() {
   console.log('solution: ', solution);
 }
 
+
+
+
 /* Display functionality */
 
 let displayString = ''
@@ -260,9 +265,20 @@ display.classList.add('display');
 displayContainer.appendChild(display);
 displayContainer.appendChild(lineBreak);
 
+
+
+
 /* Notes
 
+flexbox tasks:
+ - only three buttons per row
+ - adjust size of equals button as needed
+ - adjust width of display as needed
+ - center it all and resize when done
+
 as soon as number 2 is initialized, the next non-numerical key that is pressed will trigger the operation to occur (answer will possibly be assigned to number 1 and displayed?)
+
+decimal point button - only works if a checker variable is false (user cannot press it more than once)
 
 
 */

@@ -7,29 +7,29 @@ h1 {
 }
 
 .display {
-  border: 2px dotted blue;
-  height: 100px;
+  border: 2px groove chartreuse;
+  height: 75px;
   width: stretch;
-  font-size: 32px;
-  line-height: 85px;
+  font-size: 64px;
+  line-height: 75px;
 }
 
 .numberButton {
   width: 150px;
   height: 150px;
-  font-size: 64px;
+  font-size: 48px;
 }
 
 .operationButton {
   width: 150px;
   height: 150px;
-  font-size: 64px;
+  font-size: 48px;
 }
 
 .clearButton {
   width: 150px;
   height: 150px;
-  font-size: 64px;
+  font-size: 48px;
 }
 
 .equalsButton {
