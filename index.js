@@ -23,6 +23,7 @@ number7Button.textContent = '7';
 number7Button.classList.add('numberButton');
 number7Button.addEventListener('click', () => {
   assign('7')
+  display.textContent = displayString;
   console.log('operand1: ', operand1)
   console.log('operand2: ', operand2)
 })
@@ -34,6 +35,7 @@ number8Button.textContent = '8';
 number8Button.classList.add('numberButton');
 number8Button.addEventListener('click', () => {
   assign('8')
+  display.textContent = displayString;
   console.log('operand1: ', operand1)
   console.log('operand2: ', operand2)
 })
@@ -45,6 +47,7 @@ number9Button.textContent = '9';
 number9Button.classList.add('numberButton');
 number9Button.addEventListener('click', () => {
   assign('9')
+  display.textContent = displayString;
   console.log('operand1: ', operand1)
   console.log('operand2: ', operand2)
 })
@@ -57,6 +60,7 @@ number4Button.textContent = '4';
 number4Button.classList.add('numberButton');
 number4Button.addEventListener('click', () => {
   assign('4')
+  display.textContent = displayString;
   console.log('operand1: ', operand1)
   console.log('operand2: ', operand2)
 })
@@ -68,6 +72,7 @@ number5Button.textContent = '5';
 number5Button.classList.add('numberButton');
 number5Button.addEventListener('click', () => {
   assign('5')
+  display.textContent = displayString;
   console.log('operand1: ', operand1)
   console.log('operand2: ', operand2)
 })
@@ -79,6 +84,7 @@ number6Button.textContent = '6';
 number6Button.classList.add('numberButton');
 number6Button.addEventListener('click', () => {
   assign('6')
+  display.textContent = displayString;
   console.log('operand1: ', operand1)
   console.log('operand2: ', operand2)
 })
@@ -91,6 +97,7 @@ number1Button.textContent = '1';
 number1Button.classList.add('numberButton');
 number1Button.addEventListener('click', () => {
   assign('1')
+  display.textContent = displayString;
   console.log('operand1: ', operand1)
   console.log('operand2: ', operand2)
 })
@@ -102,6 +109,7 @@ number2Button.textContent = '2';
 number2Button.classList.add('numberButton');
 number2Button.addEventListener('click', () => {
   assign('2')
+  display.textContent = displayString;
   console.log('operand1: ', operand1)
   console.log('operand2: ', operand2)
 })
@@ -113,6 +121,7 @@ number3Button.textContent = '3';
 number3Button.classList.add('numberButton');
 number3Button.addEventListener('click', () => {
   assign('3')
+  display.textContent = displayString;
   console.log('operand1: ', operand1)
   console.log('operand2: ', operand2)
 })
@@ -127,6 +136,7 @@ plusButton.textContent = '+';
 plusButton.classList.add('operationButton');
 plusButton.addEventListener('click', () => {
   operate(add);
+  display.textContent = displayString;
   console.log('operator: ', operator);
 });
 buttonContainer.appendChild(plusButton);
@@ -136,6 +146,7 @@ minusButton.textContent = '-';
 minusButton.classList.add('operationButton');
 minusButton.addEventListener('click', () => {
   operate(subtract);
+  display.textContent = displayString;
   console.log('operator: ', operator);
 });
 buttonContainer.appendChild(minusButton);
@@ -145,6 +156,7 @@ multiplyButton.textContent = 'x';
 multiplyButton.classList.add('operationButton');
 multiplyButton.addEventListener('click', () => {
   operate(multiply);
+  display.textContent = displayString;
   console.log('operator: ', operator);
 });
 buttonContainer.appendChild(multiplyButton);
@@ -154,6 +166,7 @@ divideButton.textContent = '÷';
 divideButton.classList.add('operationButton');
 divideButton.addEventListener('click', () => {
   operate(divide);
+  display.textContent = displayString;
   console.log('operator: ', operator);
 });
 buttonContainer.appendChild(divideButton);
@@ -163,6 +176,7 @@ clearButton.textContent = 'C';
 clearButton.classList.add('clearButton');
 clearButton.addEventListener('click', () => {
   clear();
+  display.textContent = displayString;
 });
 buttonContainer.appendChild(clearButton);
 
@@ -171,7 +185,7 @@ equalsButton.textContent = '=';
 equalsButton.classList.add('equalsButton');
 equalsButton.addEventListener('click', () => {
   evaluate(operand1, operand2, operator);
-  console.log()
+  display.textContent = displayString;
 })
 buttonContainer.appendChild(equalsButton);
 
@@ -185,8 +199,12 @@ let solution = null;
 function assign(inputString) {
   if (!operand1) {
     operand1 = inputString;
+    displayString += operand1 + ' ';
+    console.log('displayString: ', displayString)
   } else if (operand1 && !operand2) {
     operand2 = inputString;
+    displayString += operand2 + ' ';
+    console.log('displayString: ', displayString)
   }
 }
 
@@ -194,13 +212,29 @@ function operate(inputFunc) {
   if (!operator) {
     operator = inputFunc;
   }
+  if (inputFunc.name === 'add') {
+    displayString += '+ ';
+    console.log('displayString: ', displayString)
+  } else if (inputFunc.name === 'subtract') {
+    displayString += '- ';
+    console.log('displayString: ', displayString)
+  } else if (inputFunc.name === 'multiply') {
+    displayString += 'x ';
+    console.log('displayString: ', displayString)
+  } else if (inputFunc.name === 'divide') {
+    displayString += '÷ ';
+    console.log('displayString: ', displayString)
+  }
+
 }
 
 function evaluate(input1, input2, mathOperation) {
   input1 = Number(input1);
   input2 = Number(input2);
   solution = mathOperation(input1, input2);
+  displayString = solution.toString();
   console.log('solution: ', solution);
+  console.log('displayString: ', displayString)
 }
 
 function clear() {
@@ -208,6 +242,7 @@ function clear() {
   operand2 = null;
   operator = null;
   solution = null;
+  displayString = '';
   console.log('operand1: ', operand1);
   console.log('operand2: ', operand2);
   console.log('operator: ', operator);
@@ -216,14 +251,16 @@ function clear() {
 
 /* Display functionality */
 
+let displayString = ''
+
 const display = document.createElement('div');
+display.type = 'text';
+display.textContent = displayString;
 display.classList.add('display');
 displayContainer.appendChild(display);
 displayContainer.appendChild(lineBreak);
 
 /* Notes
-
-Display's textContent is a string, which is concatenated and adjusted along with mathematical operations?
 
 as soon as number 2 is initialized, the next non-numerical key that is pressed will trigger the operation to occur (answer will possibly be assigned to number 1 and displayed?)
 
