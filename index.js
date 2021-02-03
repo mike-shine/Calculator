@@ -4,6 +4,10 @@ import {add, subtract, multiply, divide} from './operations.js';
 
 const body = document.querySelector('body');
 
+const title = document.createElement('h1');
+title.textContent = 'Calculator';
+body.appendChild(title);
+
 const largeContainer = document.createElement('div');
 largeContainer.classList.add('largeContainer');
 body.appendChild(largeContainer);
