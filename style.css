@@ -12,6 +12,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
+  width: 602px;
 }
 
 .displayContainer {
@@ -23,9 +24,10 @@ h1 {
   background-color: honeydew;
   border: 2px groove chartreuse;
   height: 75px;
-  width: 600px;
+  width: 597px;
   font-size: 64px;
   line-height: 75px;
+  text-align: right;
 }
 
 .rowOne {
@@ -56,6 +58,7 @@ button {
   order: 2;
   display: flex;
   flex-wrap: wrap;
+  width: 602px;
 }
 
 .numberButton {

@@ -309,6 +309,11 @@ function addDecimalPoint(input) {
   display.textContent = displayString;
 }
 
+
+
+
+
+
 /* Display functionality */
 
 let displayString = ''
