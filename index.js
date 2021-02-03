@@ -145,7 +145,7 @@ buttonContainer.appendChild(number3Button);
 
 const number0Button = document.createElement('button');
 number0Button.textContent = '0';
-number0Button.classList.add('numberButton');
+number0Button.classList.add('zeroButton');
 number0Button.classList.add('rowFive');
 number0Button.addEventListener('click', () => {
   assign('0')
@@ -197,17 +197,6 @@ multiplyButton.addEventListener('click', () => {
 });
 buttonContainer.appendChild(multiplyButton);
 
-const divideButton = document.createElement('button');
-divideButton.textContent = '÷';
-divideButton.classList.add('operationButton');
-divideButton.classList.add('rowOne');
-divideButton.addEventListener('click', () => {
-  operate(divide);
-  display.textContent = displayString;
-  console.log('operator: ', operator);
-});
-buttonContainer.appendChild(divideButton);
-
 const clearButton = document.createElement('button');
 clearButton.textContent = 'C';
 clearButton.classList.add('clearButton');
@@ -218,15 +207,16 @@ clearButton.addEventListener('click', () => {
 });
 buttonContainer.appendChild(clearButton);
 
-const equalsButton = document.createElement('button');
-equalsButton.textContent = '=';
-equalsButton.classList.add('equalsButton');
-equalsButton.classList.add('rowFive');
-equalsButton.addEventListener('click', () => {
-  evaluate(operand1, operand2, operator);
+const divideButton = document.createElement('button');
+divideButton.textContent = '÷';
+divideButton.classList.add('operationButton');
+divideButton.classList.add('rowOne');
+divideButton.addEventListener('click', () => {
+  operate(divide);
   display.textContent = displayString;
-})
-buttonContainer.appendChild(equalsButton);
+  console.log('operator: ', operator);
+});
+buttonContainer.appendChild(divideButton);
 
 const decimalButton = document.createElement('button');
 decimalButton.textContent = '.';
@@ -240,6 +230,32 @@ decimalButton.addEventListener('click', () => {
   console.log('displayString: ', displayString);
 })
 buttonContainer.appendChild(decimalButton);
+
+const equalsButton = document.createElement('button');
+equalsButton.textContent = '=';
+equalsButton.classList.add('equalsButton');
+equalsButton.classList.add('rowFive');
+equalsButton.addEventListener('click', () => {
+  evaluate(operand1, operand2, operator);
+  display.textContent = displayString;
+})
+buttonContainer.appendChild(equalsButton);
+
+const changeSignButton = document.createElement('button');
+changeSignButton.textContent = '+/-';
+changeSignButton.classList.add('operationButton');
+changeSignButton.addEventListener('click', () => {
+  alert('Coming soon to a calculator near you! :P');
+})
+buttonContainer.appendChild(changeSignButton);
+
+const newButton = document.createElement('button');
+newButton.textContent = 'Do not press';
+newButton.classList.add('danger');
+newButton.addEventListener('click', () => {
+  alert('Hi Juan!');
+})
+buttonContainer.appendChild(newButton);
 
 
 
