@@ -296,6 +296,10 @@ function operate(inputFunc) {
 function evaluate(input1, input2, mathOperation) {
   input1 = Number(input1);
   input2 = Number(input2);
+
+  console.log(input1);
+  console.log(input2);
+
   solution = mathOperation(input1, input2);
   displayString = solution.toString();
   console.log('solution: ', solution);
@@ -351,7 +355,7 @@ displayContainer.appendChild(lineBreak);
 
 
 
-
+// Math.round((a + b) * 1000000000) / 1000000000
 
 
 /* Notes
@@ -360,16 +364,7 @@ displayContainer.appendChild(lineBreak);
 what the heck is happening with decimal subtraction...?
 
 
-flexbox tasks:
-
- - center display and buttons (indiv. containers, or largeContainer?)
- - decide on width of row
- - Add all buttons first?
-
- - only three buttons per row
- - adjust size of equals button as needed
- - adjust width of display as needed
- - center it all and resize when done
+have source code items in whatever order makes sense, and use flexbox to re-oreder them
 
 
  features to be added:
