@@ -340,6 +340,13 @@ function addDecimalPoint(input) {
   display.textContent = displayString;
 }
 
+function changeSign(input) {
+  if (Number(input) < 0) {
+    input
+  }
+
+}
+
 
 
 
@@ -371,22 +378,7 @@ have source code items in whatever order makes sense, and use flexbox to re-ored
 
 
  features to be added:
-
- - Create functionality that allows users to chain operations
-
- - if operand1, operand2, and operator all exist...
- - ...and the user clicks an operator...
- - ...generate the solution, assign to operand1, re-assign operator with new input...
- - ... next numerical input will be assigned to operand2. continue as needed
-
-
-
-
-
-
-
-
-
+ - keyboard bindings
  - +/- button to change sign
  - Backspace button to allow the user to undo a mistake without clearing everything
 
