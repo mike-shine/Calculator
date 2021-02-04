@@ -117,6 +117,10 @@ button {
   background-color: mediumaquamarine;
 }
 
+.zeroButton:hover {
+  background-color: cornflowerblue;
+}
+
 .danger:hover {
   background-color: black;
 }
