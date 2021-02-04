@@ -257,7 +257,9 @@ const newButton = document.createElement('button');
 newButton.textContent = 'Do not press';
 newButton.classList.add('danger');
 newButton.addEventListener('click', () => {
-  alert('Hi Juan!');
+  displayString = 'AHHHHHHHHH';
+  display.textContent = displayString;
+
 })
 buttonContainer.appendChild(newButton);
 
@@ -290,6 +292,11 @@ function assign(inputString) {
 function operate(inputFunc) {
   if (!operator) {
     operator = inputFunc;
+  } else if (operand1 && operand2 && operator) {
+    evaluate(operand1, operand2, operator);
+    operand1 = solution;
+    operator = inputFunc;
+    operand2 = '';
   }
 }
 
@@ -360,16 +367,26 @@ displayContainer.appendChild(lineBreak);
 
 /* Notes
 
-
-what the heck is happening with decimal subtraction...?
-
-
 have source code items in whatever order makes sense, and use flexbox to re-oreder them
 
 
  features to be added:
 
  - Create functionality that allows users to chain operations
+
+ - if operand1, operand2, and operator all exist...
+ - ...and the user clicks an operator...
+ - ...generate the solution, assign to operand1, re-assign operator with new input...
+ - ... next numerical input will be assigned to operand2. continue as needed
+
+
+
+
+
+
+
+
+
  - +/- button to change sign
  - Backspace button to allow the user to undo a mistake without clearing everything
 
